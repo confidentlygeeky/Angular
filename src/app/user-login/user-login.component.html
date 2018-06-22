@@ -1,0 +1,26 @@
+<html>
+<body>
+  <br>
+
+<h3>USER LOGIN</h3>
+<br>
+<form>
+<table align="center">
+  <tr>
+    <td><input type="text" required [(ngModel)]='user.username' name="username" placeholder="Username"/></td>
+  </tr>
+  <br><br>
+  <tr>
+      <td><input type="password" [(ngModel)]='user.password' name="password" placeholder="Password"/></td>
+  </tr>
+  <br><br>
+  <tr>
+    <td><input type="submit" value="Login" (click)="onLoginClicked()"></td>
+  </tr>
+<br>
+<br>
+
+</table>
+</form>
+</body>
+</html>

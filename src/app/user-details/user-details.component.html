@@ -1,0 +1,109 @@
+<html>
+<body>
+
+
+  <div *ngIf='electedUser == null'>
+
+  <br>
+<div *ngIf='selectedUser == null'>
+  <h2>USER REGISTRATION FORM</h2>
+  <br>
+
+    
+    <input [(ngModel)]='user.username' placeholder="Name"/><br><br>
+
+    
+
+    <input type="password" [(ngModel)]='user.password' placeholder="Password"/><br><br>
+    <input [(ngModel)]='user.phone_number' placeholder="Contact"/><br><br>
+
+    <button type="button" (click)="onAdd(user)">Add </button>
+    
+
+</div>
+
+<div *ngIf='selectedUser != null'>
+  
+  <h2>USER REGISTRATION FORM</h2>
+
+    <input [(ngModel)]='selectedUser.userId' placeholder="Id"/><br><br>
+
+    
+    <input [(ngModel)]='selectedUser.username' placeholder="Name"/><br><br>
+
+    
+
+    <input [(ngModel)]='selectedUser.password' placeholder="Password"/><br><br>
+    <input [(ngModel)]='selectedUser.phone_number' placeholder="Contact"/><br><br>
+
+    <button type="button" (click)="onUpdate(selectedUser)">Update </button>
+ 
+</div>
+
+<br>
+<br>
+
+<div>
+
+<h2>USER LIST</h2>
+<br>
+
+<table border="3px solid black" align="center">
+  <tr>
+    <th>User ID</th>
+    <th>Name</th>
+    <th>Password</th>
+    <th>Contact</th>
+    <th>Update</th>
+    <th>Delete</th>
+    <th>View</th>
+  
+  </tr>
+  <tr *ngFor="let user of users">
+    <td>{{user.userId}}</td>
+      <td>{{user.username}}</td>
+      <td>{{user.password}}</td>
+      <td>{{user.phone_number}}</td>
+      <td><button type="button" (click)="onEdit(user)">Update</button></td>
+      <td><button type="button" (click)="onDelete(user)">Delete</button></td>
+      <td><button type="button" (click)="onView(user)">View</button></td>
+  </tr>
+  
+</table>
+
+</div>
+<br>
+</div>
+
+<div *ngIf='electedUser != null'>
+  <br>
+  <h2>USER PROFILE</h2>
+  <br>
+
+  <table border="3px solid black" align="center">
+    <tr>
+      <td>User Id:</td>
+      <td>{{electedUser.userId}}</td>
+    </tr>
+
+    <tr>
+        <td>Name:</td>
+        <td>{{electedUser.username}}</td>
+      </tr>
+      <tr>
+          <td>Password:</td>
+          <td>{{electedUser.password}}</td>
+        </tr>
+        <tr>
+            <td>Contact:</td>
+            <td>{{electedUser.phone_number}}</td>
+          </tr>
+  </table>
+
+</div>
+
+<br>
+<br>
+
+</body>
+</html>

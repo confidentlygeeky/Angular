@@ -1,0 +1,21 @@
+body{
+    background-color: powderblue;
+    text-align: center;
+}
+
+h2{
+    font-family:fantasy;
+}
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+    table-layout: fixed;
+}
+
+td {
+    height: 40px;
+   
+}
+
+
